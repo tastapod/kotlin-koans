@@ -17,6 +17,6 @@ fun todoTask11(): Nothing = TODO(
 
 fun task11(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, { x, y -> todoTask11() })
+    Collections.sort(arrayList, {o1: Int?, o2: Int? -> if (o1 != null && o2 != null) o2 - o1 else 0})
     return arrayList
 }

@@ -2,6 +2,7 @@ package i_introduction._12_Extensions_On_Collections
 
 import util.TODO
 import util.doc12
+import java.util.*
 
 fun todoTask12(): Nothing = TODO(
     """
@@ -16,8 +17,13 @@ fun todoTask12(): Nothing = TODO(
     documentation = doc12()
 )
 
+//fun List<Int?>.sortedDescending(o1: Int?, o2: Int?): Int =
+//        if (o1 != null && o2 != null) o2 - o1 else 0
+
+fun <T: Comparable<T>> List<T?>.sortedDescending(o1: T?, o2: T?): Int =
+        if (o1 != null && o2 != null) o2.compareTo(o1) else 0
+
 fun task12(): List<Int> {
-    todoTask12()
-    return arrayListOf(1, 5, 2)
+    return arrayListOf(1, 5, 2).sortedDescending()
 }
 
